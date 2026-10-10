@@ -129,6 +129,7 @@ function tick(){
   var p=Math.round(cnt[1]/own.length*100);if(p>best)best=p;
   document.getElementById('pct').textContent='🌸 '+p+'%';
   tick.p=p;
+  if(p===100&&ents[0].alive){over()}
 }
 function hsl(h,s,l,a){return 'hsla('+h+','+s+'%,'+l+'%,'+(a===undefined?1:a)+')'}
 function star(px,py,s,rot){x.beginPath();for(var i=0;i<8;i++){var r=i%2?s*.3:s,a=rot+i*Math.PI/4;x.lineTo(px+Math.cos(a)*r,py+Math.sin(a)*r)}x.closePath();x.fill()}
